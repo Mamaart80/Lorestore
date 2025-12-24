@@ -1,116 +1,186 @@
 <!DOCTYPE html>
-<html lang="fr">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <title>LORE | Site Under Construction</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <!-- SEO -->
     <meta name="description" content="LORE is launching soon. Online store for t-shirts, hoodies, mugs and accessories.">
 
-    <!-- Google Font -->
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
 
     <style>
+        :root {
+            --primary-bg: #0f2027;
+            --accent: #ffb703;
+            --glass: rgba(255, 255, 255, 0.08);
+            --text-main: #ffffff;
+        }
+
         body {
             margin: 0;
             font-family: 'Poppins', sans-serif;
-            background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
-            color: #ffffff;
+            background: radial-gradient(circle at center, #2c5364, #203a43, #0f2027);
+            color: var(--text-main);
             display: flex;
             justify-content: center;
             align-items: center;
-            height: 100vh;
+            min-height: 100vh;
             text-align: center;
         }
 
         .container {
-            max-width: 550px;
-            padding: 35px;
-            background: rgba(255, 255, 255, 0.06);
-            border-radius: 18px;
-            box-shadow: 0 15px 35px rgba(0,0,0,0.45);
+            max-width: 500px;
+            width: 90%;
+            padding: 40px;
+            background: var(--glass);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            border-radius: 24px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            box-shadow: 0 25px 50px rgba(0,0,0,0.5);
         }
 
         .badge {
             display: inline-block;
-            padding: 10px 20px;
+            padding: 8px 16px;
             border-radius: 50px;
-            background-color: #ffb703;
+            background-color: var(--accent);
             color: #000;
             font-weight: 600;
-            margin-bottom: 25px;
-            font-size: 0.9rem;
-        }
-
-        h1 {
-            font-size: 2.4rem;
-            margin-bottom: 10px;
+            margin-bottom: 30px;
+            font-size: 0.85rem;
+            text-transform: uppercase;
             letter-spacing: 1px;
         }
 
+        h1 {
+            font-size: 3rem;
+            margin: 0 0 10px 0;
+            letter-spacing: 4px;
+            font-weight: 600;
+        }
+
         h2 {
-            font-size: 1.2rem;
-            font-weight: 400;
-            opacity: 0.85;
-            margin-bottom: 25px;
+            font-size: 1.1rem;
+            font-weight: 300;
+            opacity: 0.7;
+            margin-bottom: 40px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
         }
 
-        .section {
+        .content-area {
+            min-height: 120px; /* Evite le saut de mise en page au chargement */
+        }
+
+        .description {
+            font-size: 1.05rem;
+            line-height: 1.8;
             margin-bottom: 30px;
-            font-size: 1rem;
-            line-height: 1.6;
-            opacity: 0.95;
+            font-weight: 300;
         }
 
-        .contact {
-            margin-top: 25px;
-            font-size: 0.9rem;
-            opacity: 0.85;
+        .highlight {
+            color: var(--accent);
+            font-weight: 600;
+        }
+
+        .contact-box {
+            margin-top: 40px;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .contact-link {
+            color: var(--text-main);
+            text-decoration: none;
+            font-weight: 400;
+            transition: opacity 0.3s;
+        }
+
+        .contact-link:hover {
+            opacity: 0.7;
         }
 
         footer {
-            margin-top: 30px;
+            margin-top: 40px;
             font-size: 0.75rem;
-            opacity: 0.6;
+            opacity: 0.5;
+            letter-spacing: 1px;
+        }
+
+        /* Animation d'entrée */
+        .fade-in {
+            animation: fadeIn 1s ease-in;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
         }
     </style>
 </head>
 
 <body>
-    <div class="container">
-        <div class="badge">🚧 Site en construction / Under construction</div>
+    <div class="container fade-in">
+        <div id="badge" class="badge">Loading...</div>
 
         <h1>LORE</h1>
-        <h2>Online Store – Coming Soon</h2>
+        <h2 id="subtitle">Online Store</h2>
 
-        <!-- French -->
-        <div class="section">
-            🇫🇷 <strong>Français</strong><br>
-            LORE prépare actuellement le lancement de sa boutique en ligne.
-            Nous proposerons très bientôt des <strong>t-shirts, sweats à capuche,
-            mugs et accessoires</strong> de qualité.
-            <br><br>
-            Une expérience d’achat moderne, rapide et sécurisée arrive bientôt.
+        <div class="content-area">
+            <p id="description" class="description">
+                </p>
         </div>
 
-        <!-- English -->
-        <div class="section">
-            🇬🇧 <strong>English</strong><br>
-            LORE is currently preparing the launch of its online store.
-            We will soon offer high-quality <strong>t-shirts, hoodies,
-            mugs, and accessories</strong>.
-            <br><br>
-            A modern, fast, and secure shopping experience is coming soon.
-        </div>
-
-        <div class="contact">
-            📧 Contact: <strong>contact.lorestore.com</strong>
+        <div class="contact-box">
+            <span id="contact-label">Contact:</span><br>
+            <a href="mailto:contact.lorestore@gmail.com" class="contact-link"><strong>contact.lorestore@gmail.com</strong></a>
         </div>
 
         <footer>
-            © 2025 – LORE. All rights reserved.
+            © 2025 LORE. <span id="rights">All rights reserved.</span>
         </footer>
     </div>
+
+    <script>
+        const translations = {
+            fr: {
+                badge: "🚧 Site en construction",
+                subtitle: "Boutique en ligne – Bientôt disponible",
+                description: "LORE prépare actuellement son lancement. Nous proposerons très bientôt des <span class='highlight'>t-shirts, sweats à capuche, mugs et accessoires</span> de qualité. Une expérience d’achat moderne et sécurisée arrive bientôt.",
+                contact: "Contactez-nous :",
+                rights: "Tous droits réservés."
+            },
+            en: {
+                badge: "🚧 Under Construction",
+                subtitle: "Online Store – Coming Soon",
+                description: "LORE is currently preparing for launch. We will soon offer high-quality <span class='highlight'>t-shirts, hoodies, mugs, and accessories</span>. A modern and secure shopping experience is on its way.",
+                contact: "Contact us:",
+                rights: "All rights reserved."
+            }
+        };
+
+        function initLanguage() {
+            // Détecte la langue (prend les 2 premiers caractères, ex: 'fr-FR' -> 'fr')
+            const userLang = navigator.language.substring(0, 2);
+            const lang = translations[userLang] ? userLang : 'en'; // 'en' par défaut
+            
+            const t = translations[lang];
+
+            // Mise à jour du DOM
+            document.getElementById('badge').textContent = t.badge;
+            document.getElementById('subtitle').textContent = t.subtitle;
+            document.getElementById('description').innerHTML = t.description;
+            document.getElementById('contact-label').textContent = t.contact;
+            document.getElementById('rights').textContent = t.rights;
+            
+            // Mise à jour de l'attribut lang de la page
+            document.documentElement.lang = lang;
+        }
+
+        window.onload = initLanguage;
+    </script>
 </body>
 </html>
